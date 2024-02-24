@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+        .box1{
+            display: flex;
+            justify-content: center;
+            font-size: 30px;
+        }
+        .box2{
+            display: flex;
+            justify-content: center;
+        gap:12px;
+       
+        }
+        .box3{
+            display: flex;
+            justify-content: center;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        h1{
+            text-decoration-line: underline;
+            text-decoration-color: brown;
+
+        }
+        body{
+            background-color: bisque;
+            
+        }
+        .box4{
+            display: flex;
+            justify-content: end;
+            gap:12px;
+            margin:9px;
+        }
+        img{
+            width:40px;
+     cursor: pointer;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="box4">
+        <img class="tim" src="https://cdn1.iconfinder.com/data/icons/web-interface-65/32/34_-_Light_Dark_Mode-256.png"/>
+        <img class="cook" src="https://cdn2.iconfinder.com/data/icons/photo-and-image-5/64/dark_mode_light_dark_mode_moonlight-256.png"/>
+    </div>
+    <div class="box1"><h1>Todo List</h1>
+        </div>
+        <div class="box2">
+   <textarea placeholder="enter the text"></textarea><br><br>
+   <button class="i">Add</button>
+   </div>
+   <div class="box3">
+   <ol></ol>
+   </div>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+   <script>
+    $("textarea").focus(function(){
+    $("textarea").css("background-color","cyan");
+    });
+    $("textarea").blur(function(){
+    $("textarea").css("background-color","gold");
+    });
+    $(".i").click(function(){
+    let d= $("textarea").val()+"          ⛔"+"<br/>";
+    if($("textarea").val()=="")
+    {
+        alert("enter the text ");
+    }
+    else{
+    
+    
+$("ol").prepend("<li>"+d+"</li>");
+    }    
+});
+    $(" ol").on("click" ,"li",function(){
+$(this).remove();
+    });
+
+    $(".tim").click(function(){
+        $("h1").css("color","red");
+        $("body").css("background-color","black");
+        $("ol").css("color","chartreuse");
+    });
+
+    $(".cook").click(function(){
+        $("h1").css("color","black");
+        $("body").css("background-color","bisque");
+        $("ol").css("color","black");
+    });
+   </script>
+</body>
+</html>
